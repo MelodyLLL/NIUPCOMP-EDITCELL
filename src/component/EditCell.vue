@@ -1,6 +1,9 @@
 <template>
   <div class="editCell">
-    <div :style="!showEditBtn ? { flexGrow: 1 } : undefined" @click="onFieldClick">
+    <div
+      :style="!showEditBtn ? { flexGrow: 1 } : undefined"
+      @click="onFieldClick"
+    >
       <el-tooltip
         v-if="!state.editMode && !showInput"
         :show-after="toolTipDelay"
@@ -32,7 +35,7 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, defineComponent, nextTick, reactive, ref } from 'vue'
+import { computed, defineComponent, nextTick, reactive, ref } from 'vue';
 
 export default defineComponent({
   name: 'EditableCell',
@@ -86,10 +89,11 @@ export default defineComponent({
     },
   },
   emits: ['input'],
-  setup(props, ctx) {
+  setup (props, ctx) {
     const state = reactive({
       editMode: false,
     });
+    console.log(11);
 
     const inputRef = ref<any>(null);
     const onFieldClick = () => {
@@ -115,10 +119,10 @@ export default defineComponent({
     };
 
     const model = computed({
-      get() {
+      get () {
         return props.modelValue;
       },
-      set(val) {
+      set (val) {
         if (!props.controlVal) {
           ctx.emit('input', val);
         }

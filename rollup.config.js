@@ -19,21 +19,29 @@ const createBanner = () => {
 
 export default {
   input: 'src/main.ts',
-  output: {
-    banner: createBanner(),
-    file: 'dist/index.js',
-    format: 'esm',
-  },
+  output: [
+    {
+      banner: createBanner(),
+      file: 'dist/index.js',
+      format: 'esm',
+      
+    },
+  ],
   external: ['vue'],
   plugins: [
+    resolve({
+      extensions: ['.vue', '.jsx', '.js'],
+    }),
+    eslint({
+      include: ['src/**'],
+    }),
     vuePlugin({
       css: true,
       target: 'browser',
       compileTemplate: true,
     }),
-    resolve({
-      extensions: ['.vue', '.jsx', '.js'],
-    }),
+
+    ts(),
     commonjs(),
     babel({
       exclude: 'node_modules/**',
@@ -42,8 +50,6 @@ export default {
     postcss({
       plugins: [],
     }),
-    ts(),
     terser(),
-    eslint(),
   ],
 };
