@@ -1,4 +1,4 @@
-import EditCell from './component/EditCell.vue';
+import EditCell from './EditCell/EditCell.vue';
 
 // 组件列表
 const components = [EditCell];
