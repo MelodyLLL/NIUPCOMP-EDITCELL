@@ -1,6 +1,7 @@
 // import { buildProps, iconPropType } from '@element-plus/utils'
 import type { ExtractPropTypes } from 'vue';
-import type EditCell from './EditCell.vue';
+import type EditCellType from './EditCell.vue';
+import EditCell from './src/index.vue';
 
 export const EditCellProps = defineProps({
   modelValue: {
@@ -52,3 +53,5 @@ export const EditCellProps = defineProps({
 });
 export type EditCellProps = ExtractPropTypes<typeof EditCellProps>;
 export type EditCellInstance = InstanceType<typeof EditCell>;
+
+export default EditCell;

@@ -1,15 +1,23 @@
 {
-  
   "compilerOptions": {
-    "lib": ["ES6","DOM"],
+    "lib": ["ES6", "DOM"],
     "module": "esnext",
-    "allowJs":true,
+    "allowJs": true,
     "jsx": "preserve",
     "declaration": true,
+    "declarationDir": "es/types",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "es",
+    // "types": [],
+    "baseUrl": "."
   },
   "exclude": ["node_modules/**"],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "packages/main.ts",
+    "types/**/*.d.ts"
+  ]
 }

@@ -5,14 +5,14 @@ build/
 docs/
 examples/
 packages/
-public/
 node_modules/
-typings/
-​
+​types/
+
 # 忽略指定文件
-babel.config.js
 tsconfig.json
-vue.config.js
+.eslintrc.json
+.eslintignore
+.babelrc
 .gitignore
 .browserslistrc
-*.map
+rollup.config.js
