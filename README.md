@@ -1,0 +1,2 @@
+# NIUPCOMP-EDITCELL
+vue component
